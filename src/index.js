@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
+import ReactDOMClient from "react-dom/client"
 import './index.css';
 //import App from './App';
 //import Hello from './Hello'
@@ -10,14 +11,11 @@ import reportWebVitals from './reportWebVitals';
 import 'tachyons'; //bootstrap like styles
 //import { robots, cats } from './robots.js'
 
-//<App />
-ReactDOM.render(
-  <React.StrictMode>       
-      {/*<CardList robots={robots} />    */ }
-      {/*<App/>*/ }
-      <App2/>
-  </React.StrictMode>,
-  document.getElementById('root')
+const rootElem = ReactDOMClient.createRoot(document.getElementById("root"));
+rootElem.render(
+  <React.StrictMode>
+    <App2 />
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
