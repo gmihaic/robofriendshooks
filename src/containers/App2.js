@@ -18,6 +18,7 @@ const App2 = () => {
     const {robots, searchfield} = this.state;*/    
     const [robots, setRobots] = useState([]);
     const [searchField, setSearchField] = useState('');
+    const [count, setCount] = useState(0);
 
     const onSearchChange = (event) => {             
         /*this.setState({
@@ -42,8 +43,10 @@ const App2 = () => {
             })
             .then((users) => {
                setRobots(users);
-            });         
-    }, []);
+            });    
+            
+        console.log(count);
+    }, [count]);
 
     const filteredRobots = robots.filter((robot) => {
         return robot.name.toLowerCase().includes(searchField.toLowerCase());
@@ -57,6 +60,7 @@ const App2 = () => {
         <>                
             <div className="tc">
                 <h1 className="f2">RoboFriends</h1>
+                <button onClick={() => {setCount(count + 1)}}>Click me!</button>
                 <SearchBox searchChange={onSearchChange} />
                 <br/>    
                 <Scroll>
